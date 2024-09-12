@@ -1,0 +1,90 @@
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.card-body a{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    background-color: #46220F;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50%;
+    font-size: large;
+    padding: 1%;
+}
+
+body.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode .card {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button:hover{
+    background-color: #704214d7;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.col {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    border: none;
+    margin-bottom: 1.5rem; 
+    /* width: 70%; */
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.card img {
+    width: 300px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.livros {
+    margin-left: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 98%;
+}
+
+.card-body img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.divh6{
+    margin-bottom: 25%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divh6 h6{
+    color: #7a7a7a;
+    font-size: 1.5em;
+}

@@ -1,0 +1,33 @@
+
+footer{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #704214;
+    color: white;
+}
+
+.footer1{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer1 img{
+    width: 120px;
+    height: auto;
+    margin-left: 2%;
+}
+
+.imgzinha img{
+    margin-right: 3%;
+    width: 26px;
+}
+
+.imgzinha{
+    width: 15%;
+}

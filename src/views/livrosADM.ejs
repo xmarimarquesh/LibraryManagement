@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/livrosADM.css" />
+        <link rel="stylesheet" href="../../css/footer.css" />
+        <link rel="stylesheet" href="../../css/headerADM.css" />
+        <link rel="stylesheet" href="../../css/perfil.css" />
+        <link rel="stylesheet" href="/css/pesquisa.css" />
+        <title>Livros ADM</title>
+        <link rel="icon" href="/public/img/Logo branca.png" type="image/x-icon">
+</head>
+
+<body>
+    <script src="/js/script.js"></script>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/livrosADM">
+                    <img src="/img/Logo branca.png" alt="Logo" width="50" height="50"
+                        class="d-inline-block align-text-top">
+                    PlotPit Library
+                </a>
+                <div id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/livrosADM">Livros</a>
+                        <a class="nav-link" href="/emprestimosADM">Empréstimos</a>
+                        <a class="nav-link" href="/usuariosADM">Usuarios</a>
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="adm">
+            <h3>Painel Administrativo</h3>
+        </div>
+
+        <div class="modoescuro">
+            <span class="material-symbols-outlined" id="tema" onclick="mudarTema()">bedtime</span>
+        </div>
+    </header>
+
+    <!-- Modal de adicionar livro  -->
+    <form method="post" enctype="multipart/form-data" action="/livrosADM">
+        <div class="modal fade" id="modalAddLivro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar livro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formAddLivro">
+                            <div class="mb-3 livro">
+                                <img id="imgFoto" src="/img/capas/livro.png" alt="Upload Image"
+                                    style="cursor: pointer;">
+                                <input required type="file" id="flImage" name="foto" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label">Título</label>
+                                <input required type="text" class="form-control" id="titulo" aria-describedby="tituloHelp"
+                                    name="titulo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input required type="number" class="form-control" id="isbn" aria-describedby="isbnHelp"
+                                    name="isbn">
+                            </div>
+                            <div class="mb-3">
+                                <label for="isbn" class="form-label">Ano</label>
+                                <input required type="number" class="form-control" id="isbn" aria-describedby="isbnHelp"
+                                    name="ano">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricao" class="form-label">Descrição</label>
+                                <input required type="text" class="form-control" id="descricao" aria-describedby="descricaoHelp"
+                                    name="descricao">
+                            </div>
+                            <div class="mb-3">
+                                <label for="autor" class="form-label">Autor</label>
+                                <input required type="text" class="form-control" id="autor" aria-describedby="autorHelp"
+                                    name="autor">
+                            </div>
+                            <div id="generoContainer">
+                                <label for="genero" class="form-label">Gênero</label>
+                                <div id="generoFields">
+                                    <select required class="form-select genero" aria-label="Select gênero" id="genero"
+                                        name="genero">
+                                        <option value="" disabled selected>Selecione o gênero</option>
+                                        <% for (let i=0; i<genero.length; i++) { %>
+                                            <option value="<%= genero[i].IDGenero %>">
+                                                <%= genero[i].Tipo %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <span class="material-symbols-outlined add " onclick="adcgenero()"> add_circle </span>
+                            </div>
+                            <label for="">Destaque
+                                <div class="check">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="destaque"
+                                            id="flexRadioDefault1" value="0" checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Não
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="destaque"
+                                            id="flexRadioDefault2" value="1">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Sim
+                                        </label>
+                                    </div>
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal de editar livro  -->
+    <div class="modal fade" id="modalEdtLivro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar livro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/livrosADM" method="post" id="Updatelivro" enctype="multipart/form-data">
+                        <div class="mb-3 livro">
+                            <img alt="Upload Image" id="upFoto" style="cursor: pointer;">
+                            <input type="file" id="upflImage" name="foto" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Titulo</label>
+                            <input type="text" class="form-control" name="titulo" aria-describedby="tituloHelp"
+                                 required id="updateTitulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="isbn" class="form-label">ISBN</label>
+                            <input type="text" class="form-control" id="UpdateIsbn" aria-describedby="isbnHelp"
+                                 required name="isbn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="isbn" class="form-label">Ano</label>
+                            <input type="text" class="form-control" id="updateAno" aria-describedby="isbnHelp"
+                                 required name="ano">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input id="updateDesc" type="text" class="form-control" name="descricao"
+                                 required aria-describedby="descricaoHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="autor" class="form-label">Autor</label>
+                            <input id="updateAutor" type="text" class="form-control" name="autor"
+                                 required aria-describedby="autorHelp">
+                        </div>
+
+                        <div id="generoContainer">
+                            <label for="genero" class="form-label">Gênero</label>
+                            <div id="generoUpdateContainer"> 
+                                <select class="form-select generoUp" aria-label="Select gênero" id="generoUp"
+                                    name="genero">
+                                    <% for (let i=0; i<genero.length; i++) { %>
+                                        <option value="<%= genero[i].IDGenero %>" id="UpdateGenero<%= genero[i].IDGenero %>">
+                                            <%= genero[i].Tipo %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <span class="material-symbols-outlined add" type="button" class="btn btn-secondary mt-2" onclick="adcgeneroUpdate()"> add_circle </span>
+                        </div>
+                        
+                        <label for="">Destaque
+                            <div class="check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="destaque" id="nao" value="0">
+                                    <label class="form-check-label" for="nao">
+                                        Não
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="destaque" id="sim" value="1">
+                                    <label class="form-check-label" for="sim">
+                                        Sim
+                                    </label>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de excluir livro  -->
+    <div class="modal fade" id="modalDelLivro" tabindex="-1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir livro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja excluir esse livro?
+                    </h1>
+                    <p style="color: red;"><strong>**Essa ação removerá todos os empréstimos relacionados</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a type="button" id="delLivro" class="btn btn-primary" href="">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- Barra de pesquisa  -->
+        <div class="filtro">
+            <div class="pesquisar">
+                <h6>Pesquise</h6>
+                <form action="/livrosADM" method="GET" id="pesquisarForm">
+                    <div class="p">
+                        <input type="text" name="pesquisa" placeholder="Pesquise por livro, autor, gênero...." />
+                        <span class="material-symbols-outlined" onclick="pesquisar()" > search </span>
+                    </div>
+            </div>
+                
+                <!-- Opção de adcionar livro  -->
+            <div class="seletor">
+                <div class="select">
+                    <h6>Status</h6>
+                        <select onchange="this.form.submit()" name="disponibilidade">
+                            <option value="" selected>Todos</option>
+                            <option value="disp" <%= disponibilidade == 'disp' ? 'selected' : ''%>>Disponível</option>
+                            <option value="indisp" <%= disponibilidade == 'indisp' ? 'selected' : ''%>>Indisponível</option>
+                        </select>
+                    </form>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modalAddLivro">Adicionar Livro</button>
+            </div>
+        </div>
+
+        <!-- Cards de livros -->
+        <% if ( livro.length>=1 ) { %>
+            <% for (let i=0; i < livro.length; i++) { %>
+                <div class="carde row g-0">
+                    <img src="/img/<%= livro[i].Foto %>" id="livroFoto<%= livro[i].IDLivro %>" class="img-fluid rounded-start" alt="Capa do livro">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title" id="livroTitulo<%= livro[i].IDLivro %>"><%= livro[i].Titulo %></h3>
+                            <h5 id="destaque<%= livro[i].IDLivro %>" style="display: none"><%= livro[i].Destaque%></h5>
+                            <h6 class="card-text" id="livroDesc<%= livro[i].IDLivro %>">Descrição: <%= livro[i].Descricao %></h6>
+                            <h6 class="card-text" id="livroAutor<%= livro[i].IDLivro %>">Autor: <%= livro[i].Autor %></h6>
+                            <h6 class="card-text" id="livroIsbn<%= livro[i].IDLivro %>">ISBN: <%= livro[i].ISBN %></h6>
+                            <h6 class="card-text" id="livroAno<%= livro[i].IDLivro %>">Ano: <%= livro[i].Ano %></h6>
+                            <h6 class="card-text" id="livroQtd<%= livro[i].IDLivro %>">Quantidade de Empréstimos: <%= livro[i].Qtd_emprestimo %></h6>
+                            <h6 class="card-text">Gênero:
+                                <% for (let j=0; j < genero_livro.length; j++) { %>
+                                    <% if (livro[i].IDLivro==genero_livro[j].IDLivro) { %>
+                                        <%= genero_livro[j].Genero.Tipo %> |
+                                    <% } %>
+                                <% } %>
+
+                                <!-- Escondido -->
+                                <% for (let j=0; j < genero_livro.length; j++) { %>
+                                    <% if (livro[i].IDLivro==genero_livro[j].IDLivro) { %>
+                                        <h6 class="card-text livroGenero<%= livro[i].IDLivro %>" id="livroGenero<%= livro[i].IDLivro %>" style="display: none;"><%= genero_livro[j].IDGenero %></h6>
+                                    <% } %>
+                                <% } %>
+                                        </h6>
+                                        <div class="botao">
+                                            <button data-bs-toggle="modal" data-bs-target="#modalEdtLivro"
+                                            onclick="ClickUpdateLivro('<%= livro[i].IDLivro %>')">Editar</button>
+                                            <button data-bs-toggle="modal" data-bs-target="#modalDelLivro"
+                                            onclick="ClickDeleteLivro('<%= livro[i].IDLivro %>')">Excluir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                <% } %>
+                <% } else { %>
+                    <div class="divh6">
+                        <h6 class="h6">Não há livros a serem exibidos...</h6>
+                    </div>
+                    <% } %>
+    </main>
+
+    <footer>
+        <div class="footer1">
+            <img src="/img/Logo branca.png" alt="">
+            <div class="imgzinha">
+                <p><img src="/img/Logo branca.png" alt="">(41) 9 9750-4019</p>
+                <p><img src="/img/Logo branca.png" alt="">@plotpit</p>
+                <p><img src="/img/Logo branca.png" alt="">biblio@bibliotecsd.com.br</p>
+            </div>
+        </div>
+        <p>Todos os direitos reservados a Plot Pit Livrarias.</p>
+    </footer>
+
+    <script src="/js/livro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <%if(typeof successMessage !== 'undefined' && successMessage){%>
+        <script>
+            alert('<%= successMessage %>')
+        </script>
+    <%}%>
+</body>
+
+</html>

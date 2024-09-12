@@ -1,0 +1,153 @@
+
+.filtro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.filtro h6{
+    font-size: 1.5em;
+}
+
+.pesquisar{
+    width: 70%;
+}
+
+.seletor{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+    align-items: end;
+}
+
+.select{
+    width: 50%;
+    margin-right: 2%;
+}
+
+.select select{
+    width: 100%;
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #704214;
+}
+
+.select select:hover{
+    border-bottom: 2px solid #46220F;
+}
+
+.select select:focus {
+    border-bottom: 3px solid #704214;
+    outline: none; 
+    box-shadow: none;
+}
+
+.seletor button{
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #704214;
+    color: white;
+    margin-left: 2%;
+}
+
+.seletor button:hover{
+    background-color: #704214d7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.p{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.p input{
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #704214;
+}
+
+.p input:hover{
+    border-bottom: 2px solid #46220F;
+}
+
+.p input:focus {
+    border-bottom: 3px solid #704214;
+    outline: none; 
+    box-shadow: none;
+}
+
+.p span{
+    color: #704214;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.p span:hover{
+    background-color: #70421450;
+    border-radius: 100%;
+}
+
+/* DARK MODE */
+
+body.dark-mode input {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 2px solid white;
+}
+
+body.dark-mode select {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 2px solid white;
+}
+
+body.dark-mode select option {
+    background-color: transparent;
+    color: #000000;
+    border-bottom: 2px solid white;
+}
+
+body.dark-mode span {
+    color: #fff;
+}
+
+body.dark-mode input:hover {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 3px solid white;
+}
+
+body.dark-mode input:focus {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 3px solid white;
+}
+
+body.dark-mode select:hover {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 3px solid white;
+}
+
+body.dark-mode select:focus {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 3px solid white;
+}

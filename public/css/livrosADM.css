@@ -1,0 +1,137 @@
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+.botao button{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;
+    color: white;
+    background-color: #704214;
+    border: none;
+    cursor: pointer;
+    width: 180px;
+    font-size: large;
+    padding: 1%;
+    margin-right: 2%;
+}
+
+button:hover{
+    background-color: #704214d7;
+}
+
+
+.adm {
+
+    background-color: #8AA88A;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    border: none;
+    margin: 2%;
+    width: 95%;
+}
+
+.carde{
+    margin: 1%;
+    
+}
+
+.carde img{
+    max-width: 250px;
+    object-fit: cover;
+}
+
+.card-body h3{
+    margin-bottom: 3%;
+}
+
+.card-body{
+    margin-left: 3%;
+}
+
+.botao{
+
+    display: flex;
+}
+
+.livro {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.livro img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+.check{
+    display: flex;
+}
+
+.divh6{
+    margin-bottom: 20%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.divh6 h6{
+    color: #7a7a7a;
+    font-size: 1.5em;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.apagarGender {
+    margin: 2px;
+    cursor: pointer;
+    position: absolute; 
+    right: 25px; 
+    top: 40%; 
+    transform: translateY(-50%);
+}
+
+.generoUpdate {
+
+    position: relative;
+}
+
+.form-check, .add {
+
+    margin: 5%;
+    cursor: pointer;
+}

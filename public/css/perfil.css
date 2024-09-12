@@ -1,0 +1,156 @@
+.mb-3 input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #46220F;
+    outline: none;
+    border-radius: 0px;
+}
+
+
+.mb-3 input:hover{
+    border-bottom: 2px solid #46220F;
+}
+
+.mb-3 input:focus {
+    border-bottom: 2px solid #915636;
+    outline: none; 
+    font-size: small;
+    box-shadow: none;
+}
+
+modal-footer button:hover{
+    background-color: #704214d7;
+}
+
+.form-select{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #46220F;
+    outline: none;
+    border-radius: 0px;
+}
+
+.form-select:hover{
+    border-bottom: 2px solid #46220F;
+}
+
+.form-select:focus {
+    border-bottom: 2px solid #915636;
+    outline: none; 
+    font-size: small;
+    box-shadow: none;
+}
+
+.modal-footer button{
+    border: 2px solid #46220F;
+    background-color: #46220F;
+    width: 30%;
+}
+
+.modal-footer button:hover{
+    border: 2px solid #46220F;
+    background-color: #643c26;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+
+}
+
+#delUser{
+
+    background-color: rgb(165, 27, 27);
+}
+
+.modal-footer input{
+    background-color: #46220F;
+    border: 2px solid #46220F;
+    width: 30%;
+}
+
+.modal-footer input:hover{
+    border: 2px solid #46220F;
+    background-color: #643c26;
+}
+#addGenero {
+
+    background-color: #46220F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-footer input{
+    background-color: #46220F;
+    color: white;
+    border: none;
+}
+
+.modal-footer input:hover{
+    background-color: #643c26;
+    color: white;
+    border: none;
+}
+
+/* DARK MODE */
+
+/* Estilos para o modal no modo escuro */
+body.dark-mode .modal-content {
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto claro */
+}
+
+body.dark-mode .modal-header, 
+body.dark-mode .modal-footer {
+    background-color: #444; /* Fundo escuro para o cabeçalho e rodapé do modal */
+}
+
+body.dark-mode .modal-body {
+    background-color: #333; /* Fundo escuro para o corpo do modal */
+    color: #fff; /* Texto claro */
+}
+
+body.dark-mode .form-control {
+    background-color: #555; /* Fundo dos campos de formulário */
+    color: #fff; /* Texto dos campos de formulário */
+    border: 1px solid #666; /* Borda dos campos de formulário */
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #666; /* Fundo dos campos de formulário ao focar */
+    color: #fff; /* Texto dos campos de formulário ao focar */
+    border-color: #888; /* Borda dos campos de formulário ao focar */
+}
+
+body.dark-mode .form-select {
+    background-color: #555; /* Fundo dos campos de seleção */
+    color: #fff; /* Texto dos campos de seleção */
+    border: 1px solid #666; /* Borda dos campos de seleção */
+}
+
+body.dark-mode .form-select:focus {
+    background-color: #666; /* Fundo dos campos de seleção ao focar */
+    color: #fff; /* Texto dos campos de seleção ao focar */
+    border-color: #888; /* Borda dos campos de seleção ao focar */
+}
+
+body.dark-mode .modal-footer input{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+body.dark-mode .modal-footer input:hover{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    border: none;
+}
