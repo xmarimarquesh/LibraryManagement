@@ -1,0 +1,53 @@
+.livro{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 3%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+.livro img{
+    width: 20%;
+}
+
+.descricao{
+    flex-direction: column;
+    display: flex;
+    padding: 5%;
+    width: 70%;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.descricao h1{
+    font-size: 4em;
+    margin-bottom: 5%;
+}
+
+.descricao h4{
+    margin-bottom: 2%;
+}
+.descricao h2{
+    margin-bottom: 2%;
+}
+
+.descricao h5{
+    color: white;
+    padding: 0.3%;
+}
+
+.vermelho{
+    background-color: red;
+}
+
+.verde{
+    background-color: #388b00;
+}
+
+.tit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100%;
+}
